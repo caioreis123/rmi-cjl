@@ -1,0 +1,18 @@
+version: "3.4"
+services:
+  server:
+    build: .
+    network_mode: host
+    command: java -jar server/target/server-1.0-SNAPSHOT.jar
+
+  client:
+    build: .
+    network_mode: host
+    command: java -jar client/target/client-1.0-SNAPSHOT.jar
+    depends_on:
+      - server
+
+
+
+
+
